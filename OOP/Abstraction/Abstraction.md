@@ -23,7 +23,7 @@ Abstraction hides complex details while showing only essential information, redu
 **Syntax:**
 
 ```java
-abstract void methodName(parameters);
+abstract void methodName(int parameters);
 ```
 
 - Declared without implementation
@@ -49,6 +49,18 @@ This method can be called via an object and can be overridden in subclasses
 <br />
 
 # Interface
+
+- An interface can have:
+    - `abstract` method(s)
+    - `default` method(s)
+    - `static` method(s)
+    - `public static final` variable(s)
+
+- All the methods declared or implemented in an interface are by default
+  `public` and all the variables are by default `public static final`.
+
+**Note:** A class uses the keyword `implements` to use an interface but an
+interface uses the keyword `extends` to use another interface.
 
 ### Decoupling
 
@@ -103,6 +115,7 @@ class Rectangle implements Polygon {
 
 ### Advantages of Interfaces
 
+- Interfaces allow us to achieve 100% abstraction
 - Support implementation of multiple interfaces
 - Provide a way to achieve abstraction
 - Enable loose coupling
@@ -155,3 +168,16 @@ class Rectangle implements Line, Polygon { /* ... */
 - Use interfaces to define common behavior across unrelated classes
 - Implement multiple interfaces to combine different behaviors
 - Use to achieve loose coupling in design
+
+<br />
+
+# Interface vs Abstract Class
+
+| Interfaces                                | Abstract Classes                                        |
+|-------------------------------------------|---------------------------------------------------------|
+| Can have abstract method(s) only          | Can have concrete (non-abstract) &   abstract method(s) 
+|
+| Support multiple inheritance              | Don’t support multiple inheritance                      |
+| All members are `public`                  | Can have `private` , `protected` and `public` members   |
+| All data members are `static` and `final` | Can have non-static and non-final members too           |
+| Can’t have constructors                   | Constructors can be defined                             |
