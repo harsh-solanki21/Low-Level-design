@@ -1,5 +1,5 @@
 package LowLevelDesign.SOLID.InterfaceSegregation.good;
 
-public interface FeatheredCreature {
-    void molt();
+public interface Eatable {
+    void eat();
 }

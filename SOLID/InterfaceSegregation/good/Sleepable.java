@@ -1,5 +1,5 @@
 package LowLevelDesign.SOLID.InterfaceSegregation.good;
 
-public interface FlyingCreature {
-    void fly();
+public interface Sleepable {
+    void sleep();
 }
