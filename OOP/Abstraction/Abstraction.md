@@ -113,6 +113,108 @@ class Rectangle implements Polygon {
 
 <br />
 
+---
+
+### ✦ `default` Methods in Interfaces
+
+**Purpose:** 
+Allow interfaces to provide a default implementation for methods.
+
+**Why:** Before Java 8, interfaces could only declare methods (no implementation). This caused issues when interfaces needed to evolve (e.g., adding a new method would break all implementing classes). default methods solve this by allowing a method with a body.
+
+**Syntax:**
+```java
+public interface MyInterface {
+    default void myDefaultMethod() {
+        System.out.println("This is a default method");
+    }
+}
+```
+
+**Key Points:**
+- Implementing classes can override the method.
+- Helps in backward compatibility.
+- Still part of the interface, not a class.
+
+**Example:**
+```java
+public interface Vehicle {
+  void drive(); // abstract method
+
+  // default method with implementation
+  default void startEngine() {
+    System.out.println("Starting the engine... (from Vehicle interface)");
+  }
+}
+
+
+// Implement the Interface Without Overriding the Default Method
+public class Car implements Vehicle {
+  @Override
+  public void drive() {
+    System.out.println("Car is driving...");
+  }
+
+  // No need to override startEngine() unless custom behavior is needed
+}
+
+
+//  Implement the Interface and Override the Default Method
+public class Bike implements Vehicle {
+  @Override
+  public void drive() {
+    System.out.println("Bike is driving...");
+  }
+
+  // Overriding the default method
+  @Override
+  public void startEngine() {
+    System.out.println("Bike engine starting with kick...");
+  }
+}
+
+```
+
+<br />
+
+### ✦ `static` Methods in Interfaces
+
+**Purpose:** 
+Define utility methods that are related to the interface but not inherited by implementing classes.
+
+
+**Syntax**
+```java
+public interface MyInterface {
+    static void myStaticMethod() {
+        System.out.println("This is a static method");
+    }
+}
+```
+
+
+**Key Points:**
+- Cannot be overridden by implementing classes.
+- Called using the interface name, not the object.
+- Useful for helper or factory methods tied to the interface.
+
+
+**Example:**
+```java
+public interface MathUtils {
+    static int add(int a, int b) {
+        return a + b;
+    }
+}
+
+// Usage:
+int result = MathUtils.add(3, 5);
+```
+
+<br />
+
+--- 
+
 ### Advantages of Interfaces
 
 - Interfaces allow us to achieve 100% abstraction
