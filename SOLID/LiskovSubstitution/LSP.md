@@ -1,8 +1,7 @@
 # Liskov Substitution Principle
 
-- **Child classes should never break the parent class type definitions.**
-- **If S is a subtype of T, then objects of type T in a program may be replaced with objects of type S without altering
-  any of the desirable properties of that program.**
+- **Objects of a superclass should be replaceable with objects of its subclasses without affecting the correctness of the program.**
+- **Subtypes must behave consistently with the expectations set by their base types.**
 
 
 - Which means, Derived types must be completely substitutable for their base types

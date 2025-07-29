@@ -1,6 +1,7 @@
 # Interface Segregation Principle
 
 - **Clients should not be forced to depend upon interfaces that they do not use.**
+- Prefer many small, specific interfaces over one large general-purpose interface.
 
 
 - When a Class is required to perform actions that are not useful, it is wasteful and may produce unexpected bugs if the

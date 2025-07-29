@@ -2,7 +2,7 @@
 
 - **High-level modules should not depend on low-level modules. Both should depend on the abstraction.**
 
-- **Abstractions should not depend on details. Details should depend on abstractions.**
+- Use interfaces or abstract classes to invert dependencies and promote decoupling.
 
 
 - High-level Module(or Class): Class that executes an action with a tool.
